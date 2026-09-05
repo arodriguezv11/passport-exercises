@@ -4919,27 +4919,27 @@
             {
               "commands": [
                 {
-                  "command": "gh pr view --web",
+                  "command": "gh pr status --repo {{fork_repository}}\ngh pr view {{practice_branch}} --repo {{fork_repository}} --web",
                   "platform": "windows",
                   "shell": "powershell"
                 },
                 {
-                  "command": "gh pr view --web",
+                  "command": "gh pr status --repo {{fork_repository}}\ngh pr view {{practice_branch}} --repo {{fork_repository}} --web",
                   "platform": "macos",
                   "shell": "zsh"
                 },
                 {
-                  "command": "gh pr view --web",
+                  "command": "gh pr status --repo {{fork_repository}}\ngh pr view {{practice_branch}} --repo {{fork_repository}} --web",
                   "platform": "linux",
                   "shell": "bash"
                 }
               ],
               "expected": "The GitHub diff matches the staged diff you reviewed locally.",
               "id": "final-review",
-              "instruction": "Open the current branch's draft PR, then confirm the author, source branch, target branch, commit subject, and single changed file. Leave the PR open as learning evidence.",
+              "instruction": "Run both commands below from the practice folder. The first checks that the draft PR exists. The second opens it. Your local Passport fills in your fork and practice branch automatically. Do not run gh repo set-default. On GitHub, confirm the author, source branch, target branch, commit subject, and single changed file. Leave the PR open.",
               "links": [],
               "machine": "local",
-              "on_failure": "Correct the same branch and push again; do not merge or delete evidence.",
+              "on_failure": "If no PR is listed, return to Push and open a draft pull request. Otherwise correct the same branch and push again. Do not configure a default repository, create a second PR, merge, or delete the existing PR.",
               "on_success": "Return to the Passport and run Check my work.",
               "platforms": [
                 "all"

@@ -251,31 +251,34 @@ Run the exact push and gh pr create commands displayed by Prepare practice folde
 
 **Where:** The laptop or desktop in front of you
 
-Open the current branch's draft PR, then confirm the author, source branch, target branch, commit subject, and single changed file. Leave the PR open as learning evidence.
+Run both commands below from the practice folder. The first checks that the draft PR exists. The second opens it. Your local Passport fills in your fork and practice branch automatically. Do not run gh repo set-default. On GitHub, confirm the author, source branch, target branch, commit subject, and single changed file. Leave the PR open.
 
 **Open PowerShell on your Windows computer, then run:**
 
 ```powershell
-gh pr view --web
+gh pr status --repo {{fork_repository}}
+gh pr view {{practice_branch}} --repo {{fork_repository}} --web
 ```
 
 **Open Terminal on your Mac; zsh starts inside it automatically. Then run:**
 
 ```zsh
-gh pr view --web
+gh pr status --repo {{fork_repository}}
+gh pr view {{practice_branch}} --repo {{fork_repository}} --web
 ```
 
 **Open Terminal on your Linux computer; Bash normally starts inside it automatically. Then run:**
 
 ```bash
-gh pr view --web
+gh pr status --repo {{fork_repository}}
+gh pr view {{practice_branch}} --repo {{fork_repository}} --web
 ```
 
 **Expected:** The GitHub diff matches the staged diff you reviewed locally.
 
 **Continue when:** Return to the Passport and run Check my work.
 
-**If not:** Correct the same branch and push again; do not merge or delete evidence.
+**If not:** If no PR is listed, return to Push and open a draft pull request. Otherwise correct the same branch and push again. Do not configure a default repository, create a second PR, merge, or delete the existing PR.
 
 The Passport presents the questions and required confirmation in the
 browser. Do not create or edit a submission JSON file by hand.
